@@ -1,0 +1,24 @@
+Here's a fun dataset to play around with.
+The attached file contains a zip-file called 'retina1_trainvalid.zip'
+If you unzip it, you will find a folder with fundus images, called 'trainvalid' and a text-file 'labels_trainvalid.txt' containing 0 and 1. Take a look at the fundus images, and you will see some contain rather severe damages to the retinal structure - these are signs of diabetic retinopathy (label "1").
+You are welcome to use any and all resources at your disposal to try to train a model for this data - including pre-trained or not. 
+For your first task, train 10 seeds of a model on this data. In your experiments, I would like to see train/valid split(s) of 0.8/0.2 - you can use these splits to do parameter optimization. You are free to use any and all augmentations during your training. 
+Train your model in your environment of choice and submit plots that show the train and valid accuracy averaged across your 10 seeds!
+
+Next, take a look at the images contained in 'retina1_test.zip'. As you will see from the filenames already, there seem to be different formats, indicating three different data sources.
+Hence, before you blindly predict labels on these images, you will most likely want to make sure that:
+- images are in the same "format" [same view of the retina]
+- images have similar "color" format [to your training data]
+Please try to modify the images before you predict their labels to the best of your ability. Then feed them to your model and predict the labels - your code needs to create a TEXT-file, which you will also need to include in your submission. 
+The text file needs to be named [FIRST NAME]_[LAST NAME]_Test.txt
+Its structure should be like this
+
+image-name               [0,1] 
+
+Each line is a single image file name, followed by a "TAB" and then the predicted label ("0", or "1"). Obtain this label as the majority vote across your 10 seeds!!!
+
+BONUS: grad-cam some files and see what your models pay attention to ^^
+
+Do all coding in a jupyter notebook called 'retina.ipynb' and submit the executed version with all plots and results and the *_Test.txt file as a zip-file to 
+
+christian.wallraven+ANNS2023@gmail.com
